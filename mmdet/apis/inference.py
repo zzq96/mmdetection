@@ -158,6 +158,7 @@ def show_result_pyplot(model, img, result, score_thr=0.3, fig_size=(15, 10)):
     if hasattr(model, 'module'):
         model = model.module
     img = model.show_result(img, result, score_thr=score_thr, show=False)
+    plt.imsave("result.jpg", img)
     plt.figure(figsize=fig_size)
     plt.imshow(mmcv.bgr2rgb(img))
     plt.show()
